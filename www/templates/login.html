@@ -1,0 +1,28 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-view title="Firebase Login">
+    <ion-content>
+      <div>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input ng-model="username" type="text" placeholder="Username" />
+          </label>
+          <label class="item item-input">
+            <input ng-model="password" type="password" placeholder="Password" />
+          </label>
+        </div>
+        <div class="padding-left padding-right">
+          <div class="button-bar">
+            <a class="button" ng-click="$root.api.login(username, password)">Login</a>
+            <a class="button" ng-click="$root.api.register(username, password)">Register</a>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+</ion-modal-view>

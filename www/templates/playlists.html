@@ -1,0 +1,15 @@
+<ion-view view-title="Playlists">
+
+
+  <ion-content>
+    <button ng-click="startCamera(); show.startCamera = true" ng-hide="show.startCamera" class="button button-block button-primary">Photo</button>
+    <button class="button button-icon icon ion-camera" ng-click="$root.api.upload()" ng-show="show.startCamera">Snap</button>
+
+    <canvas ng-show="show.startCamera" id="camera" width="352" height="288" style="border:2px"></canvas>
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

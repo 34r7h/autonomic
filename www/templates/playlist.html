@@ -1,0 +1,31 @@
+<ion-view view-title="Playlist">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-camera" ng-click="$root.api.upload()"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="row" style="flex-wrap:wrap">
+      <div class="col col-25" ng-repeat="image in $root.api.images">
+        <img ng-src="data:image/jpeg;base64,{{$root.api.images[$index].image}}" width="100%" />
+      </div>
+    </div>
+    <hr/>
+
+    <div class="row" ng-repeat="image in $root.api.images" ng-if="$index % 5 === 0">
+      <div class="col col-25" ng-if="$index < $root.api.images.length">
+        <img ng-src="data:image/jpeg;base64,{{$root.api.images[$index].image}}" width="100%" />
+      </div>
+      <div class="col col-25" ng-if="$index + 1 < $root.api.images.length">
+        <img ng-src="data:image/jpeg;base64,{{$root.api.images[$index + 1].image}}" width="100%" />
+      </div>
+      <div class="col col-25" ng-if="$index + 2 < $root.api.images.length">
+        <img ng-src="data:image/jpeg;base64,{{$root.api.images[$index + 2].image}}" width="100%" />
+      </div>
+      <div class="col col-25" ng-if="$index + 3 < $root.api.images.length">
+        <img ng-src="data:image/jpeg;base64,{{$root.api.images[$index + 3].image}}" width="100%" />
+      </div>
+      <div class="col col-25" ng-if="$index + 4 < $root.api.images.length">
+        <img ng-src="data:image/jpeg;base64,{{$root.api.images[$index + 4].image}}" width="100%" />
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
